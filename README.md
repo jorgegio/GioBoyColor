@@ -1,3 +1,3 @@
 # GioBoyColor
 
-![license](https://img.shields.io/github/license/JorgeGiovannetti/GioBoyAdvance)
+![license](https://img.shields.io/github/license/JorgeGiovannetti/GioBoyColor)
