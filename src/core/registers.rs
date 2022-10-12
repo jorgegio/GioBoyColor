@@ -1,27 +1,22 @@
 pub struct Registers {
-    pub af: u16,
-    pub bc: u16,
-	pub de: u16,
-	pub hl: u16,
-	pub sp: u16,
-	pub pc: u16
+    pub af: u16, // Hi: A, Lo: -, Accumulator & Flags
+    pub bc: u16, // Hi: B, Lo: C
+    pub de: u16, // Hi: D, Lo: E
+    pub hl: u16, // Hi: H, Lo: L
+    pub sp: u16, // Stack Pointer
+    pub pc: u16, // Program Counter
 }
 
 impl Registers {
-
-	pub fn new() -> Registers {
-		// Registers are set to these specific values after GB BIOS runs
-		Registers {
-			a: 0x01,
-			f: 0xB0,
-			b: 0x00,
-			c: 0x13,
-			d: 0x00,
-			e: 0xD8,
-			h: 0x01,
-			l: 0x4D,
-			sp: 0xFFFE,
-			pc: 0x0100,
-		}
-	}
+    pub fn new() -> Registers {
+        // Registers are set to these specific values after GB BIOS runs
+        Registers {
+            af: 0x01B0,
+            bc: 0x0013,
+            de: 0x00D8,
+            hl: 0x014D,
+            sp: 0xFFFE,
+            pc: 0x0100,
+        }
+    }
 }
