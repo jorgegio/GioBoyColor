@@ -1,13 +1,15 @@
 use std::{vec::Vec, fs::File, io::Read, path::PathBuf, fmt};
 
 pub struct Rom {
-    bytes: Vec<u8>
+    bytes: Vec<u8>,
+    pub is_loaded: bool
 }
 
 impl Rom {
     pub fn new() -> Rom {
         Rom {
-            bytes: Vec::new()
+            bytes: Vec::new(),
+            is_loaded: false
         }
     }
 
@@ -15,10 +17,15 @@ impl Rom {
         let mut file = File::open(rom_path).expect("Invalid ROM path");
 		file.read_to_end(&mut self.bytes).expect("Unable to read ROM");
         println!("Successfully loaded ROM:\n{}", self);
+        self.is_loaded = true;
     }
 
     pub fn read(&self, address: u16) -> u8 {
         self.bytes[address as usize]
+    }
+
+    pub fn write(&self, address: u16, data: u8) {
+        todo!()
     }
 
     fn title(&self) -> String {

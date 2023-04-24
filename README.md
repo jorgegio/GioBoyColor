@@ -8,6 +8,12 @@
 - [x] Load ROMs
 - [ ] GBC Architecture Simulation
   - [ ] CPU
+    - [x] Load Instructions
+    - [ ] Arithmetic/Logic Instructions
+    - [ ] Rotate/shift Instructions
+    - [ ] Single-bit Operation Instructions
+    - [ ] CPU Control Instructions
+    - [ ] Jump Instructions
   - [x] RAM
   - [ ] GPU
   - [ ] Input

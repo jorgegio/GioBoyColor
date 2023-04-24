@@ -69,9 +69,14 @@ impl Emulator {
         while self.window.is_open() {
             self.handle_menus();
 
-            // TODO: Update buffer from GBC Core
-            for i in buffer.iter_mut() {
-                *i = 0; // write something more funny here!
+            if self.gbc.rom.is_loaded {
+                // TODO: Update buffer from GBC Core
+                for i in buffer.iter_mut() {
+                    *i = 0; // write something more funny here!
+                }
+
+                let cycles = self.gbc.step();
+                println!("Cycles executed: {cycles}");
             }
 
             // We unwrap here as we want this code to exit if it fails. Real applications may want to handle this in a different way

@@ -1,5 +1,8 @@
+#[macro_use]
+mod helpers;
+
 pub mod gbc;
-pub mod gpu;
-pub mod memory_map;
-pub mod rom;
-pub mod registers;
+mod gpu;
+mod memory_map;
+mod registers;
+mod rom;

@@ -17,4 +17,8 @@ impl Gpu {
         // TODO: Check for mode, and handle all that (maybe add an unsafe_read? not sure)
         self.vram[address as usize]
     }
+
+    pub fn write(&self, address: u16, data: u8) {
+        todo!()
+    }
 }
